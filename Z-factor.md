@@ -85,13 +85,13 @@ $$c_g = -\frac{1}{V}\frac{dV}{dp}$$
 $$c_g = \frac{1}{p}-\frac{1}{Z}\frac{dZ}{dp}$$
 This compressibility aims to quantify how compressible gas is at different pressures, i.e. how easily the volume of the gas changes at different pressures.
 
-Since for a retrograde gas condensate, condensate drops out below the dew point leading to lower G'_ p (i.e. volumetric expansion as some of the gas changes phase to condensate), to them accurately describe how easily the volume of this gas changes at those pressures (i.e. the isothermal gas compressibility), the **two phae Z-factor** should be used to calculate the isothermal gas compressibility as it corrects for the P vs. V behaviour when the condensate drop out is involved and therefore more accurately defines the volumetric behaviour of the gas at pressures below dew point. **--This I am not fully sure about, so may be good to confirm with someone.**
+Since for a retrograde gas condensate, condensate drops out below the dew point leading to lower G'_ p (i.e. volumetric expansion as some of the gas changes phase to condensate), to them accurately describe how easily the volume of this gas changes at those pressures (i.e. the isothermal gas compressibility), the **two phase Z-factor** should be used to calculate the isothermal gas compressibility as it corrects for the P vs. V behaviour when the condensate drop out is involved and therefore more accurately defines the volumetric behaviour of the gas at pressures below dew point. **--This I am not fully sure about, so may be good to confirm with someone.**
 
 According to ChatGPT, an EoS model can be used to calculate the compressibility of the gas phase at equilibrium with the liquid phase at each pressure step, which gives the true gas compressibility, but is only valid for the gas that is still in the system. 
 
 ## **MBAL vs. Simulators (Eclipse) according to ChatGPT (verify):**
 
-Also according to ChatGPT, the **two phase Z-factor** is used in MBAL for Z-factor related calculations and c_g because MBAL calculates things at the bullk system level and not each phase independently like a simulator like Eclipse might. Therefore the correction to the Z-factor, i.e. the **two phase Z-factor** is needed to deal with the liquid dropout.
+Also according to ChatGPT, the **two phase Z-factor** is used in MBAL for Z-factor related calculations and c_g because MBAL calculates things at the bulk system level and not each phase independently like a simulator like Eclipse might. Therefore the correction to the Z-factor, i.e. the **two phase Z-factor** is needed to deal with the liquid dropout.
 However, in Eclipse, the Bg term is used to convert directly between reservoir and surface volumes, and represents the Bg of the lean gas remaining in a given cell, i.e. requires the **Z-factor of the lean gas, meaning the Z-factor of the gas in equilibrium with the liquid phase at the given pressure**. 
 
 **My personal thinking on this:**
